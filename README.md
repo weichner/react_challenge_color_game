@@ -1,30 +1,25 @@
-# React + TypeScript + Vite
+# Color Guessing Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple color guessing game built with React.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+In this game, a color is randomly selected and displayed on the screen. The player is then presented with three color options, one of which matches the displayed color. The player's task is to guess which of the three options is the correct one.
 
-## Expanding the ESLint configuration
+## How It Works
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+The game uses React's useState and useEffect hooks to manage the game state and lifecycle. The color to be guessed and the color options are stored in state variables, and a useEffect hook is used to generate a new set of colors whenever the game starts or the player makes a correct guess.
 
-- Configure the top-level `parserOptions` property like this:
+The game uses a helper function, `getRandomColor`, to generate random colors. This function is defined in a separate utility module.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+When a player selects a color, the game checks if the selected color matches the color to be guessed. If the guess is correct, the game generates a new set of colors and the player can continue playing. If the guess is wrong, the game displays a message to let the player know.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## How to Run
+
+To run the game, follow these steps:
+
+1. Clone the repository
+2. Install the dependencies with `npm install`
+3. Start the game with `npm start`
+
+Enjoy the game! 🚀🚀🚀
